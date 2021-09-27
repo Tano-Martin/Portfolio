@@ -55,12 +55,6 @@ class TravailAdmin(admin.ModelAdmin):
 	list_per_page = 10
 	list_editable = ['status']
 
-@admin.register(models.Sociaux)
-class SociauxAdmin(admin.ModelAdmin):
-	list_display = ('nom', 'icone', 'lien', 'date_add', 'date_update', 'status')
-	date_hierarchy = 'date_add'
-	list_per_page = 10
-	list_editable = ['status']
 
 @admin.register(models.Resume)
 class ResumeAdmin(admin.ModelAdmin):
@@ -98,6 +92,20 @@ class DiplomeAdmin(admin.ModelAdmin):
 @admin.register(models.Categoriepapier)
 class CategoriepapierAdmin(admin.ModelAdmin):
 	list_display = ('nom', 'date_add', 'date_update', 'status')
+	date_hierarchy = 'date_add'
+	list_per_page = 10
+	list_editable = ['status']
+
+@admin.register(models.Socialicone)
+class SocialiconeAdmin(admin.ModelAdmin):
+	list_display = ('nom', 'icone', 'date_add', 'date_update', 'status')
+	date_hierarchy = 'date_add'
+	list_per_page = 10
+	list_editable = ['icone', 'status']
+
+@admin.register(models.Reseauxsocial)
+class ReseauxsocialAdmin(admin.ModelAdmin):
+	list_display = ('lien', 'date_add', 'date_update', 'status')
 	date_hierarchy = 'date_add'
 	list_per_page = 10
 	list_editable = ['status']

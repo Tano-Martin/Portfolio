@@ -47,7 +47,7 @@
                 </h1>
                 <div class="social-links mt-3 text-center">
                     {% for social in sociaux %}
-                        <a href="{{ social.lien }}" class="{{ social.nom }}" target="_blank"><i class="{{ social.icone }}"></i></a>
+                        <a href="{{ social.lien }}" class="{{ social.sociaux.nom }}" target="_blank"><i class="{{ social.sociaux.icone }}"></i></a>
                     {% endfor %}
                 </div>
             </div>

@@ -10,7 +10,7 @@ def index(request):
     configuration = models_siteweb.Configuration.objects.filter(status=True).first()
     apropos = models_siteweb.Apropos.objects.filter(status=True).first()
     travaux = models_siteweb.Travail.objects.filter(status=True)
-    sociaux = models_siteweb.Sociaux.objects.filter(status=True)
+    sociaux = models_siteweb.Reseauxsocial.objects.filter(status=True)
     diplomes = models_siteweb.Diplome.objects.filter(status=True)
     categoriePapiers = models_siteweb.Categoriepapier.objects.filter(status=True)
     resume = models_siteweb.Resume.objects.filter(status=True)

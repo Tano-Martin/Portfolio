@@ -156,7 +156,7 @@
         
         <div class="row">
           <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Sumary</h3>
+            <!-- <h3 class="resume-title">Sumary</h3>
             <div class="resume-item pb-0">
               <h4>Alex Smith</h4>
               <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
@@ -165,7 +165,7 @@
                 <li>(123) 456-7891</li>
                 <li>alice.barkley@example.com</li>
               </ul>
-            </div>
+            </div> -->
             
             <h3 class="resume-title">Education</h3>
             <div class="resume-item">
@@ -207,47 +207,8 @@
     </section><!-- End Resume Section -->
     
 
-    <!-- ======= diplome et certificat Section ======= -->
-    <section id="diplome" class="diplome section-bg">
-      <div class="container">
     
-        <div class="section-title">
-          <h2>Diplômes & Certificats</h2>
-          <p>{{ configuration.descriptionDiplome }}</p>
-        </div>
-
-        <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="diplome-flters">
-              <li data-filter="*" class="filter-active">All</li>
-        
-              {% for categorie in categoriePapiers %}
-              <li data-filter=".filter-{{ categorie.id }}">{{ categorie.nom|capfirst }}</li>
-              {% endfor %}
-        
-            </ul>
-          </div>
-        </div>
-
-        <div class="row diplome-container" data-aos="fade-up" data-aos-delay="100">
     
-          {% for diplome in diplomes %}
-            <div class="col-lg-4 col-md-6 diplome-item filter-{{ diplome.categorie.id }}">
-              <div class="diplome-wrap">
-                <img src="{{ diplome.image.url }}" class="img-fluid" alt="{{ diplome.titre }}">
-                <div class="diplome-links">
-                  <a href="{{ diplome.image.url }}" data-gallery="diplomeGallery" class="diplome-lightbox"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          {% endfor %}
-    
-        </div>
-    
-      </div>
-    </section><!-- End diplome et certificat Section -->
-
-
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">
@@ -263,9 +224,9 @@
               <li data-filter="*" class="filter-active">All</li>
               
               {% for categorie in categories %}
-                <li data-filter=".filter-{{ categorie.nom }}">{{ categorie.nom|capfirst }}</li>
+              <li data-filter=".filter-{{ categorie.nom }}">{{ categorie.nom|capfirst }}</li>
               {% endfor %}
-
+              
             </ul>
           </div>
         </div>
@@ -273,7 +234,7 @@
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
           
           {% for projet in projets %}
-            <div class="col-lg-4 col-md-6 portfolio-item filter-{{ projet.categorie }}">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-{{ projet.categorie }}">
               <div class="portfolio-wrap">
                 <img src="{{ projet.image.url }}" class="img-fluid" alt="projet image">
                 <div class="portfolio-links">
@@ -282,12 +243,52 @@
                 </div>
               </div>
             </div>
-          {% endfor %}
+            {% endfor %}
+            
+          </div>
           
         </div>
-        
-      </div>
-    </section><!-- End Portfolio Section -->
+      </section><!-- End Portfolio Section -->
+
+      <!-- ======= diplome et certificat Section ======= -->
+      <section id="diplome" class="diplome section-bg">
+        <div class="container">
+      
+          <div class="section-title">
+            <h2>Diplômes & Certificats</h2>
+            <p>{{ configuration.descriptionDiplome }}</p>
+          </div>
+  
+          <div class="row" data-aos="fade-up">
+            <div class="col-lg-12 d-flex justify-content-center">
+              <ul id="diplome-flters">
+                <li data-filter="*" class="filter-active">All</li>
+          
+                {% for categorie in categoriePapiers %}
+                <li data-filter=".filter-{{ categorie.id }}">{{ categorie.nom|capfirst }}</li>
+                {% endfor %}
+          
+              </ul>
+            </div>
+          </div>
+  
+          <div class="row diplome-container" data-aos="fade-up" data-aos-delay="100">
+      
+            {% for diplome in diplomes %}
+              <div class="col-lg-4 col-md-6 diplome-item filter-{{ diplome.categorie.id }}">
+                <div class="diplome-wrap">
+                  <img src="{{ diplome.image.url }}" class="img-fluid" alt="{{ diplome.titre }}">
+                  <div class="diplome-links">
+                    <a href="{{ diplome.image.url }}" data-gallery="diplomeGallery" class="diplome-lightbox"><i class="bx bx-plus"></i></a>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+      
+          </div>
+      
+        </div>
+      </section><!-- End diplome et certificat Section -->
     
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">

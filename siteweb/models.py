@@ -101,21 +101,6 @@ class Travail(models.Model):
 	def __str__(self):
 		return self.liste
 
-class Sociaux(models.Model):
-	nom = models.CharField(max_length=255)
-	icone = models.CharField(max_length=255)
-	lien = models.CharField(max_length=255)
-	date_add = models.DateTimeField(auto_now_add=True)
-	date_update = models.DateTimeField(auto_now=True)
-	status = models.BooleanField(default=True)
-
-	class Meta():
-		verbose_name = 'Social'
-		verbose_name_plural = 'Sociaux'
-
-	def __str__(self):
-		return self.nom
-
 class Resume(models.Model):
 	titre = models.CharField(max_length=255)
 	option = models.ManyToManyField('siteweb.Optionresume', related_name='optionResume')
@@ -188,4 +173,31 @@ class Categoriepapier(models.Model):
 		return self.nom
 
 
+class Socialicone(models.Model):
+	nom = models.CharField(max_length=255)
+	icone = models.CharField(max_length=255)
+	date_add = models.DateTimeField(auto_now_add=True)
+	date_update = models.DateTimeField(auto_now=True)
+	status = models.BooleanField(default=True)
+
+	class Meta():
+		verbose_name = 'Socialicone'
+		verbose_name_plural = 'Socialicones'
+
+	def __str__(self):
+		return self.nom
+
+class Reseauxsocial(models.Model):
+	lien = models.CharField(max_length=255)
+	sociaux = models.ForeignKey('siteweb.Socialicone', related_name='social_icon', on_delete=models.CASCADE)
+	date_add = models.DateTimeField(auto_now_add=True)
+	date_update = models.DateTimeField(auto_now=True)
+	status = models.BooleanField(default=True)
+
+	class Meta():
+		verbose_name = 'Reseauxsocial'
+		verbose_name_plural = 'Reseauxsocials'
+
+	def __str__(self):
+		return self.lien
 
