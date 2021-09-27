@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'projet.apps.ProjetConfig',
+	'siteweb.apps.SitewebConfig',
+	'tinymce',
 ]
 
 MIDDLEWARE = [
