@@ -66,7 +66,7 @@ class ResumeAdmin(admin.ModelAdmin):
 
 @admin.register(models.Optionresume)
 class OptionresumeAdmin(admin.ModelAdmin):
-	list_display = ('titre', 'date', 'date_add', 'date_update', 'status')
+	list_display = ('titre', 'nomStructure', 'date', 'date_add', 'date_update', 'status')
 	date_hierarchy = 'date_add'
 	list_per_page = 10
 	list_editable = ['status']

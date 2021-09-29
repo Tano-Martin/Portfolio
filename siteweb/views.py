@@ -1,7 +1,10 @@
 from django.shortcuts import get_object_or_404, render
 from projet import models as models_projet
 from . import models as models_siteweb
-import siteweb
+
+import json
+from django.http.response import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 
 # Create your views here.
@@ -13,8 +16,8 @@ def index(request):
     sociaux = models_siteweb.Reseauxsocial.objects.filter(status=True)
     diplomes = models_siteweb.Diplome.objects.filter(status=True)
     categoriePapiers = models_siteweb.Categoriepapier.objects.filter(status=True)
-    resume = models_siteweb.Resume.objects.filter(status=True)
-    optionresume = models_siteweb.Optionresume.objects.filter(status=True)
+    resumes = models_siteweb.Resume.objects.filter(status=True)
+    optionresumes = models_siteweb.Optionresume.objects.filter(status=True).order_by("-date_add")
     competences = models_siteweb.Competence.objects.filter(status=True)
 
     contact = models_siteweb.Contact.objects.filter(status=True)
@@ -31,3 +34,36 @@ def index(request):
 def portfolioDetail(request, id_projet):
     projet = get_object_or_404(models_projet.Projet, id=id_projet)
     return render(request, "portfolio-details.html", locals())
+
+def is_email(email):
+    try:
+        validate_email(email)
+        return True
+    except:
+        return False
+
+@csrf_exempt
+def contactPost(request):
+    messages = ""
+    success = False
+    if request.method == 'POST':
+        # newEmail = json.loads(request.POST.get('email'))
+        # if newEmail.isspace():
+        #     messages = "Veuillez remplir ce champs avant de le soumettre !"
+        # elif is_email(newEmail):
+        #     messages = "Email invalide"
+        # else:
+        #     news, created = models_siteweb.Contact.objects.get_or_create(email=newEmail)
+        #     news.save()
+        #     if created:
+        #         messages = "Email envoyé avec succès"
+        #     else:
+        #         messages = "Email déjà envoyé"
+        #     success = True
+        print("ENVOYEEEEEEEEEEEEEEEEE SUCCCCEE")
+        messages = "Email envoyé avec succès"
+    datas = {
+        "success": success,
+        "messages": messages
+    }
+    return JsonResponse(datas, safe=False)

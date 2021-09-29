@@ -117,8 +117,10 @@ class Resume(models.Model):
 
 class Optionresume(models.Model):
 	titre = models.CharField(max_length=255)
+	nomStructure = models.CharField(max_length=255) 
 	date = models.CharField(max_length=255)
-	description = HTMLField()
+	description = HTMLField(blank=True, null=True)
+
 	date_add = models.DateTimeField(auto_now_add=True)
 	date_update = models.DateTimeField(auto_now=True)
 	status = models.BooleanField(default=True)

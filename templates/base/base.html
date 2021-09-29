@@ -28,7 +28,7 @@
     <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="{% static 'assets/css/style2.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/style3.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -62,6 +62,11 @@
                     <li>
                         <a href="{% url 'index' %}#about" class="nav-link scrollto">
                             <i class="bx bx-user"></i> <span>About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'index' %}#skills" class="nav-link scrollto">
+                            <i class="bx bx-file-blank"></i><span>Compétence</span>
                         </a>
                     </li>
                     <li>
@@ -117,5 +122,71 @@
     <!-- Template Main JS File -->
     <script src="{% static 'assets/js/main.js' %}"></script>
 
+    <script src="{% static 'assets/vuejs/vue.js' %}"></script>
+    <script src="{% static 'assets/vuejs/axios.min.js' %}"></script>
+    <script src="{% static 'assets/vuejs/sweetalert2.all.min.js' %}"></script>
+
+    <script>
+        new Vue({
+            el: "#form",
+            delimiters: ["%{", "}"],
+            data: {
+                nom: "",
+                email: "",
+                sujet: "",
+                message: "",
+            },
+            methods: {
+                registersEmail() {
+                    if (!this.email || !this.nom || !this.sujet || !this.message) {
+                        print("ERREUR CHAMPS VIDE")
+                        swal.fire({
+                            icon: 'error',
+                            text: 'Veuillez remplir ce champ avant de le soumettre !',
+                            showConfirmButton: false,
+                            timer: 2000
+                        })
+                    }
+                    else if (!/(\w\.?)+@(\w\.?)+\.[A-Za-z]{2,3}/.test(this.email)) {
+                        print("ERREUR EMAIL")
+                        swal.fire({
+                            icon: 'error',
+                            text: 'Email invalide',
+                            showConfirmButton: false,
+                            timer: 2000
+                        })
+                    }
+                    else {
+                        let form = new FormData()
+                        form.append('nom', JSON.stringify(this.nom))
+                        form.append('sujet', JSON.stringify(this.sujet))
+                        form.append('message', JSON.stringify(this.message))
+                        form.append('email', JSON.stringify(this.email))
+
+                        axios.defaults.xsrfCookieName = 'XSRF-TOKEN'
+                        axios.defaults.xsrfHeaderName = 'X-XSRF-TOKEN'
+                        axios.post("{% url 'contactPost' %}", form).then((response) => {
+                            if (response.data.success) {
+                                swal.fire({
+                                    icon: 'success',
+                                    text: response.data.messages,
+                                    showConfirmButton: false,
+                                    timer: 2000
+                                })
+                            }
+                            else {
+                                swal.fire({
+                                    icon: 'error',
+                                    text: response.data.messages,
+                                    showConfirmButton: false,
+                                    timer: 2000
+                                })
+                            }
+                        })
+                    }
+                }
+            }
+        })
+    </script>
 </body>
 </html>

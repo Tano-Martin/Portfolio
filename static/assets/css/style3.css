@@ -8,7 +8,7 @@ body {
 }
 
 a {
-  color: #149ddd;
+  color: #609ed6;
   text-decoration: none;
 }
 
@@ -31,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #149ddd;
+  background: #609ed6;
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -40,12 +40,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .back-to-top i {
   font-size: 28px;
-  color: #fff;
+  color: #000000;
   line-height: 0;
 }
 
 .back-to-top:hover {
-  background: #2eafec;
+  background: #6bb5fa;
   color: #fff;
 }
 
@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 9997;
   transition: all 0.5s;
   padding: 0 10px;
-  background: #040b14;
+  background: #609ed6;
   overflow-y: auto;
 }
 
@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 15px auto;
   display: block;
   width: 120px;
-  border: 8px solid #2c2f3f;
+  border: 8px solid #000000;
 }
 
 #header .profile h1 {
@@ -130,9 +130,9 @@ h1, h2, h3, h4, h5, h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
-.nav-menu {
-  padding: 30px 0 0 0;
-}
+/* .nav-menu {
+  padding: 0px 0 0 0;
+} */
 
 .nav-menu * {
   margin: 0;
@@ -148,8 +148,8 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu a {
   display: flex;
   align-items: center;
-  color: #a8a9b4;
-  padding: 12px 15px;
+  color: #000000;
+  padding: 5px 15px;
   margin-bottom: 8px;
   transition: 0.3s;
   font-size: 15px;
@@ -158,16 +158,16 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu a i {
   font-size: 24px;
   padding-right: 8px;
-  color: #6f7180;
+  color: #000000;
 }
 
 .nav-menu a:hover, .nav-menu .active, .nav-menu li:hover > a {
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
 }
 
 .nav-menu a:hover i, .nav-menu .active i, .nav-menu li:hover > a i {
-  color: #149ddd;
+  color: #ffffff;
 }
 
 /* Mobile Navigation */
@@ -180,8 +180,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 24px;
   transition: all 0.4s;
   outline: none !important;
-  background-color: #149ddd;
-  color: #fff;
+  background-color: #609ed6;
+  color: #000000;
   width: 40px;
   height: 40px;
   display: inline-flex;
@@ -244,7 +244,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   padding-bottom: 4px;
   letter-spacing: 1px;
-  border-bottom: 3px solid #149ddd;
+  border-bottom: 3px solid #609ed6;
 }
 
 @media (min-width: 1024px) {
@@ -296,7 +296,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #149ddd;
+  background: #609ed6;
   bottom: 0;
   left: 0;
 }
@@ -332,7 +332,7 @@ section {
 .about .content ul i {
   font-size: 16px;
   margin-right: 5px;
-  color: #149ddd;
+  color: #609ed6;
   line-height: 0;
 }
 
@@ -355,7 +355,7 @@ section {
 .facts .count-box i {
   display: block;
   font-size: 44px;
-  color: #149ddd;
+  color: #609ed6;
   float: left;
   line-height: 0;
 }
@@ -425,7 +425,7 @@ section {
   width: 1px;
   height: 10px;
   transition: .9s;
-  background-color: #149ddd;
+  background-color: #609ed6;
 }
 
 /*--------------------------------------------------------------
@@ -500,13 +500,13 @@ section {
 
 
 /*--------------------------------------------------------------
-# diplome
+# certificat
 --------------------------------------------------------------*/
-.diplome .diplome-item {
+.certificat .certificat-item {
   margin-bottom: 30px;
 }
 
-.diplome #diplome-flters {
+.certificat #certificat-flters {
   padding: 0;
   margin: 0 auto 35px auto;
   list-style: none;
@@ -516,7 +516,7 @@ section {
   padding: 2px 15px;
 }
 
-.diplome #diplome-flters li {
+.certificat #certificat-flters li {
   cursor: pointer;
   display: inline-block;
   padding: 10px 15px 8px 15px;
@@ -529,22 +529,22 @@ section {
   transition: all 0.3s ease-in-out;
 }
 
-.diplome #diplome-flters li:hover, .diplome #diplome-flters li.filter-active {
-  color: #149ddd;
+.certificat #certificat-flters li:hover, .certificat #certificat-flters li.filter-active {
+  color: #609ed6;
 }
 
-.diplome #diplome-flters li:last-child {
+.certificat #certificat-flters li:last-child {
   margin-right: 0;
 }
 
-.diplome .diplome-wrap {
+.certificat .certificat-wrap {
   transition: 0.3s;
   position: relative;
   overflow: hidden;
   z-index: 1;
 }
 
-.diplome .diplome-wrap::before {
+.certificat .certificat-wrap::before {
   content: "";
   background: rgba(255, 255, 255, 0.5);
   position: absolute;
@@ -557,7 +557,7 @@ section {
   opacity: 0;
 }
 
-.diplome .diplome-wrap .diplome-links {
+.certificat .certificat-wrap .certificat-links {
   opacity: 1;
   left: 0;
   right: 0;
@@ -569,7 +569,7 @@ section {
   justify-content: center;
 }
 
-.diplome .diplome-wrap .diplome-links a {
+.certificat .certificat-wrap .certificat-links a {
   color: #fff;
   font-size: 28px;
   text-align: center;
@@ -578,15 +578,15 @@ section {
   width: 50%;
 }
 
-.diplome .diplome-wrap .diplome-links a:hover {
+.certificat .certificat-wrap .certificat-links a:hover {
   background: rgba(20, 157, 221, 0.95);
 }
 
-.diplome .diplome-wrap .diplome-links a + a {
+.certificat .certificat-wrap .certificat-links a + a {
   border-left: 1px solid #37b3ed;
 }
 
-.diplome .diplome-wrap:hover::before {
+.certificat .certificat-wrap:hover::before {
   top: 0;
   left: 0;
   right: 0;
@@ -594,7 +594,7 @@ section {
   opacity: 1;
 }
 
-.diplome .diplome-wrap:hover .diplome-links {
+.certificat .certificat-wrap:hover .certificat-links {
   opacity: 1;
   bottom: 0;
 }
@@ -641,7 +641,7 @@ section {
 }
 
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
-  color: #149ddd;
+  color: #609ed6;
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -731,11 +731,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #149ddd;
+  border: 1px solid #609ed6;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #149ddd;
+  background-color: #609ed6;
 }
 
 .portfolio-details .portfolio-info {
@@ -789,10 +789,10 @@ section {
   justify-content: center;
   width: 54px;
   height: 54px;
-  background: #149ddd;
+  background: #609ed6;
   border-radius: 50%;
   transition: 0.5s;
-  border: 1px solid #149ddd;
+  border: 1px solid #609ed6;
 }
 
 .services .icon i {
@@ -806,7 +806,7 @@ section {
 }
 
 .services .icon-box:hover .icon i {
-  color: #149ddd;
+  color: #609ed6;
 }
 
 .services .title {
@@ -821,7 +821,7 @@ section {
 }
 
 .services .title a:hover {
-  color: #149ddd;
+  color: #609ed6;
 }
 
 .services .description {
@@ -909,11 +909,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #149ddd;
+  border: 1px solid #609ed6;
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #149ddd;
+  background-color: #609ed6;
 }
 
 /*--------------------------------------------------------------
@@ -932,7 +932,7 @@ section {
 
 .contact .info i {
   font-size: 20px;
-  color: #149ddd;
+  color: #609ed6;
   float: left;
   width: 44px;
   height: 44px;
@@ -983,12 +983,12 @@ section {
 }
 
 .contact .info .social-links a:hover {
-  background: #149ddd;
+  background: #609ed6;
   color: #fff;
 }
 
 .contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
-  background: #149ddd;
+  background: #609ed6;
   color: #fff;
 }
 
@@ -1076,16 +1076,16 @@ section {
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: #149ddd;
+  background: #609ed6;
   border: 0;
   padding: 10px 24px;
-  color: #fff;
+  color: #000000;
   transition: 0.4s;
   border-radius: 4px;
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: #37b3ed;
+  background: #62a8e6;
 }
 
 @-webkit-keyframes animate-loading {
@@ -1163,11 +1163,14 @@ section {
   bottom: 0;
   width: 300px;
   z-index: 9999;
-  background: #040b14;
+  background-color: #609ed6;
+  /* display: none; */
 }
 
 #footer .copyright {
   text-align: center;
+  background-color: #609ed6;
+  color: #000000;
 }
 
 #footer .credits {
