@@ -38,15 +38,6 @@
                   
                 </ul>
               </div>
-              <!-- <div class="col-lg-6">
-                <ul>
-
-                  {% for option in apropos.option.all %}
-                    <li><i class="bi bi-chevron-right"></i> <strong>{{ option.titre }}:</strong> <span>{{ option.information }}</span></li>
-                  {% endfor %}
-
-                </ul>
-              </div> -->
             </div>
           </div>
         </div>
@@ -81,22 +72,7 @@
             </div>
           </div>
           
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="count-box">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hours Of Support</strong> aut commodi quaerat</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="count-box">
-              <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hard Workers</strong> rerum asperiores dolor</p>
-            </div>
-          </div>
-          
+  
         </div>
         
       </div>
@@ -234,20 +210,7 @@
             <h2>Certificats</h2>
             <p>{{ configuration.descriptioncertificat }}</p>
           </div>
-  
-          <!-- <div class="row" data-aos="fade-up">
-            <div class="col-lg-12 d-flex justify-content-center">
-              <ul id="certificat-flters">
-                <li data-filter="*" class="filter-active">All</li>
-          
-                {% for categorie in categoriePapiers %}
-                <li data-filter=".filter-{{ categorie.id }}">{{ categorie.nom|capfirst }}</li>
-                {% endfor %}
-          
-              </ul>
-            </div>
-          </div> -->
-  
+
           <div class="row certificat-container" data-aos="fade-up" data-aos-delay="100">
       
             {% for certificat in certificats %}
@@ -255,7 +218,7 @@
                 <div class="certificat-wrap">
                   <img src="{{ certificat.image.url }}" class="img-fluid" alt="{{ certificat.titre }}">
                   <div class="certificat-links">
-                    <a href="{{ certificat.image.url }}" data-gallery="certificatGallery" class="certificat-lightbox"><i class="bx bx-plus"></i></a>
+                    <button class="certificat-lightbox"></a><i class="">{{ certificat.titre }}</i></button>
                   </div>
                 </div>
               </div>
@@ -280,7 +243,7 @@
           {% for service in services %}
             <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="{{ service.id }}00">
               <div class="icon"><i class="{{ service.icone }}"></i></div>
-              <h4 class="title"><a href="">{{ service.nom }}</a></h4>
+              <h4 class="title"><a href="">{{ service.titre }}</a></h4>
               <p class="description">{{ service.description }}</p>
             </div>
           {% endfor %}
@@ -367,7 +330,7 @@
           </div>
           
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="#" method="post" role="form" class="php-email-form" id="form">
+            <form action="#" method="post" class="php-email-form">
               {% csrf_token %}
               <div class="row">
                 <div class="form-group col-md-6">
@@ -375,23 +338,18 @@
                   <input type="text" name="name" class="form-control" id="name" required v-model="nom">
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
+                  <label for="name">Votre Email</label>
                   <input type="email" class="form-control" name="email" id="email" required v-model="email">
                 </div>
               </div>
               <div class="form-group">
-                <label for="name">Subject</label>
+                <label for="name">Sujet</label>
                 <input type="text" class="form-control" name="subject" id="subject" required v-model="sujet">
               </div>
               <div class="form-group">
                 <label for="name">Message</label>
                 <textarea class="form-control" name="message" rows="10" required v-model="message"></textarea>
               </div>
-              <!-- <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div> -->
               <div class="text-center"><button type="submit" @click.prevent="envoieInfo">Envoyer Message</button></div>
             </form>
           </div>

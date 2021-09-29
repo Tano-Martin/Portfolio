@@ -7,45 +7,65 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('siteweb', '0001_initial'),
+        ("siteweb", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Reseauxsocial',
+            name="Reseauxsocial",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('lien', models.CharField(max_length=255)),
-                ('date_add', models.DateTimeField(auto_now_add=True)),
-                ('date_update', models.DateTimeField(auto_now=True)),
-                ('status', models.BooleanField(default=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("lien", models.CharField(max_length=255)),
+                ("date_add", models.DateTimeField(auto_now_add=True)),
+                ("date_update", models.DateTimeField(auto_now=True)),
+                ("status", models.BooleanField(default=True)),
             ],
             options={
-                'verbose_name': 'Reseauxsocial',
-                'verbose_name_plural': 'Reseauxsocials',
+                "verbose_name": "Reseauxsocial",
+                "verbose_name_plural": "Reseauxsocials",
             },
         ),
         migrations.CreateModel(
-            name='Socialicone',
+            name="Socialicone",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nom', models.CharField(max_length=255)),
-                ('icone', models.CharField(max_length=255)),
-                ('date_add', models.DateTimeField(auto_now_add=True)),
-                ('date_update', models.DateTimeField(auto_now=True)),
-                ('status', models.BooleanField(default=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("nom", models.CharField(max_length=255)),
+                ("icone", models.CharField(max_length=255)),
+                ("date_add", models.DateTimeField(auto_now_add=True)),
+                ("date_update", models.DateTimeField(auto_now=True)),
+                ("status", models.BooleanField(default=True)),
             ],
             options={
-                'verbose_name': 'Socialicone',
-                'verbose_name_plural': 'Socialicones',
+                "verbose_name": "Socialicone",
+                "verbose_name_plural": "Socialicones",
             },
         ),
         migrations.DeleteModel(
-            name='Sociaux',
+            name="Sociaux",
         ),
         migrations.AddField(
-            model_name='reseauxsocial',
-            name='sociaux',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='social_icon', to='siteweb.socialicone'),
+            model_name="reseauxsocial",
+            name="sociaux",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="social_icon",
+                to="siteweb.socialicone",
+            ),
         ),
     ]

@@ -7,13 +7,13 @@ import tinymce.models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('siteweb', '0003_optionresume_nomstructure'),
+        ("siteweb", "0003_optionresume_nomstructure"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='optionresume',
-            name='description',
+            model_name="optionresume",
+            name="description",
             field=tinymce.models.HTMLField(blank=True, null=True),
         ),
     ]

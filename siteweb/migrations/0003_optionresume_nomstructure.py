@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('siteweb', '0002_auto_20210927_1242'),
+        ("siteweb", "0002_auto_20210927_1242"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='optionresume',
-            name='nomStructure',
+            model_name="optionresume",
+            name="nomStructure",
             field=models.CharField(default=1, max_length=255),
             preserve_default=False,
         ),

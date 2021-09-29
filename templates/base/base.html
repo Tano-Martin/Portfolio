@@ -11,8 +11,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
-    <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    <link href="{% static 'assets/img/portfolio_icon.png' %}" rel="icon">
+    <link href="{% static 'assets/img/portfolio_icon.png' %}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -28,7 +28,7 @@
     <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="{% static 'assets/css/style3.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/style4.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -105,8 +105,7 @@
         </div>
     </footer><!-- End  Footer -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
@@ -128,60 +127,75 @@
 
     <script>
         new Vue({
-            el: "#form",
+            el: "#contact",
             delimiters: ["%{", "}"],
             data: {
                 nom: "",
                 email: "",
                 sujet: "",
                 message: "",
+                url: "{% url 'contactPost' %}",
             },
             methods: {
                 envoieInfo() {
                     if (!this.email || !this.nom || !this.sujet || !this.message) {
-                        print("ERREUR CHAMPS VIDE")
                         swal.fire({
-                            icon: 'error',
-                            text: 'Veuillez remplir ce champ avant de le soumettre !',
+                            icon: "error",
+                            text: "Veuillez remplir les champs vides, s'il vous plaît !",
                             showConfirmButton: false,
                             timer: 2000
                         })
                     }
-                    else if (!/(\w\.?)+@(\w\.?)+\.[A-Za-z]{2,3}/.test(this.email)) {
-                        print("ERREUR EMAIL")
+                    else if (!/[A-Za-z'éèöïäëû ]+/.test(this.name)) {
                         swal.fire({
-                            icon: 'error',
-                            text: 'Email invalide',
+                            icon: "error",
+                            text: "Veuillez saisir un nom valide, s'il vous plaît !",
+                            showConfirmButton: false,
+                            timer: 2000,
+                        })
+                    }
+                    else if (!/(\w\.?)+@(\w\.?)+\.[A-Za-z]{2,3}/.test(this.email)) {
+                        swal.fire({
+                            icon: "error",
+                            text: "Email invalide !",
                             showConfirmButton: false,
                             timer: 2000
                         })
                     }
                     else {
+                        axios.defaults.xsrfCookieName = 'XSRF-TOKEN'
+                        axios.defaults.xsrfHeaderName = 'X-XSRF-TOKEN'
+                        
                         let form = new FormData()
+                        
                         form.append('nom', JSON.stringify(this.nom))
                         form.append('sujet', JSON.stringify(this.sujet))
                         form.append('message', JSON.stringify(this.message))
                         form.append('email', JSON.stringify(this.email))
-
-                        axios.defaults.xsrfCookieName = 'XSRF-TOKEN'
-                        axios.defaults.xsrfHeaderName = 'X-XSRF-TOKEN'
-                        axios.post("{% url 'contactPost' %}", form).then((response) => {
+                        
+                        axios.post(this.url, form).then((response) => {
                             if (response.data.success) {
                                 swal.fire({
                                     icon: 'success',
-                                    text: response.data.messages,
+                                    text: response.data.test_message,
                                     showConfirmButton: false,
                                     timer: 2000
                                 })
+                                this.nom = ""
+                                this.email = ""
+                                this.sujet = ""
+                                this.message = ""
                             }
                             else {
                                 swal.fire({
                                     icon: 'error',
-                                    text: response.data.messages,
+                                    text: response.data.test_message,
                                     showConfirmButton: false,
                                     timer: 2000
                                 })
                             }
+                        }).catch((e) => {
+                            console.log(e)
                         })
                     }
                 }

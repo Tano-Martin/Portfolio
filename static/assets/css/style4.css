@@ -45,7 +45,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top:hover {
-  background: #6bb5fa;
   color: #fff;
 }
 
@@ -287,7 +286,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #173b6c;
+  color: #609ed6;
 }
 
 .section-title h2::after {
@@ -311,7 +310,7 @@ section {
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
-  color: #173b6c;
+  color: #609ed6;
 }
 
 .about .content ul {
@@ -442,7 +441,7 @@ section {
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 2px solid #1f5297;
+  border-left: 2px solid #609ed6;
   position: relative;
 }
 
@@ -458,7 +457,7 @@ section {
 
 .resume .resume-item h5 {
   font-size: 16px;
-  background: #e4edf9;
+  background: #609ed6;
   padding: 5px 15px;
   display: inline-block;
   font-weight: 600;
@@ -486,16 +485,8 @@ section {
   left: -9px;
   top: 0;
   background: #fff;
-  border: 2px solid #1f5297;
+  border: 2px solid #609ed6;
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -569,21 +560,22 @@ section {
   justify-content: center;
 }
 
-.certificat .certificat-wrap .certificat-links a {
+.certificat .certificat-wrap .certificat-links button {
   color: #fff;
   font-size: 28px;
   text-align: center;
-  background: rgba(20, 157, 221, 0.75);
+  background: #609ed6;
   transition: 0.3s;
   width: 50%;
+  border: 1px solid #609ed6;
 }
 
-.certificat .certificat-wrap .certificat-links a:hover {
-  background: rgba(20, 157, 221, 0.95);
+.certificat .certificat-wrap .certificat-links button:hover {
+  background: #609ed6;
 }
 
-.certificat .certificat-wrap .certificat-links a + a {
-  border-left: 1px solid #37b3ed;
+.certificat .certificat-wrap .certificat-links button + button {
+  border-left: 1px solid #609ed6;
 }
 
 .certificat .certificat-wrap:hover::before {
@@ -591,23 +583,13 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 1;
+  opacity: 0;
 }
 
 .certificat .certificat-wrap:hover .certificat-links {
   opacity: 1;
   bottom: 0;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 /*--------------------------------------------------------------
@@ -622,7 +604,7 @@ section {
   margin: 0 auto 35px auto;
   list-style: none;
   text-align: center;
-  background: #fff;
+  background: none;
   border-radius: 50px;
   padding: 2px 15px;
 }
@@ -684,13 +666,13 @@ section {
   color: #fff;
   font-size: 28px;
   text-align: center;
-  background: rgba(20, 157, 221, 0.75);
+  background: #609ed6;
   transition: 0.3s;
   width: 50%;
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
-  background: rgba(20, 157, 221, 0.95);
+  background: #61a4dff2;
 }
 
 .portfolio .portfolio-wrap .portfolio-links a + a {
@@ -702,7 +684,7 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 1;
+  opacity: 0;
 }
 
 .portfolio .portfolio-wrap:hover .portfolio-links {
@@ -796,17 +778,18 @@ section {
 }
 
 .services .icon i {
-  color: #fff;
+  color: #000000;
   font-size: 24px;
   line-height: 0;
 }
 
 .services .icon-box:hover .icon {
   background: #fff;
+  border: 1px solid #000000;
 }
 
 .services .icon-box:hover .icon i {
-  color: #609ed6;
+  color: #000000;
 }
 
 .services .title {
@@ -927,7 +910,7 @@ section {
   padding: 30px;
   background: #fff;
   width: 100%;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 24px 0 #0000001f;
 }
 
 .contact .info i {
@@ -936,7 +919,7 @@ section {
   float: left;
   width: 44px;
   height: 44px;
-  background: #dff3fc;
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
