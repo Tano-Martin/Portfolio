@@ -17,7 +17,6 @@ def index(request):
     diplomes = models_siteweb.Diplome.objects.filter(status=True)
     categoriePapiers = models_siteweb.Categoriepapier.objects.filter(status=True)
     resumes = models_siteweb.Resume.objects.filter(status=True)
-    optionresumes = models_siteweb.Optionresume.objects.filter(status=True).order_by("-date_add")
     competences = models_siteweb.Competence.objects.filter(status=True)
 
     contact = models_siteweb.Contact.objects.filter(status=True)

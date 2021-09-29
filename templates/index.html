@@ -371,24 +371,28 @@
               {% csrf_token %}
               <div class="row">
                 <div class="form-group col-md-6">
-                  <label for="nom">Nom & Prénom</label>
-                  <input type="text" class="form-control" name="nom" id="name">
+                  <label for="name">Nom et Prénoms</label>
+                  <input type="text" name="name" class="form-control" id="name" required v-model="nom">
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="email">Email</label>
-                  <input type="email" class="form-control" name="email" id="email">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" required v-model="email">
                 </div>
               </div>
               <div class="form-group">
-                <label for="sujet">Sujet</label>
-                <input type="text" class="form-control" name="sujet" id="subject">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" required v-model="sujet">
               </div>
               <div class="form-group">
-                <label for="message">Message</label>
-                <textarea class="form-control" name="message" rows="10"></textarea>
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" rows="10" required v-model="message"></textarea>
               </div>
-
-              <div class="text-center"><button type="submit" @click.prevent="registersEmail">Send Message</button></div>
+              <!-- <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div> -->
+              <div class="text-center"><button type="submit" @click.prevent="envoieInfo">Envoyer Message</button></div>
             </form>
           </div>
           
