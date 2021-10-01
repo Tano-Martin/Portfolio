@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-w_z=m@v-=4=2pu^rpnx5b8n&z%+hm1vwvp$eoo2+7bs9=(9ag@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["tano-martin.herokuapp.com", "*"]
 # tano-martin.herokuapp.com
 
 
@@ -155,3 +155,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 django_heroku.settings(locals())
+
+
+# envoie d'email configuration
+
+EMAIL_HOST = "tano-martin.herokuapp.com"
+EMAIL_POST = 587
+EMAIL_HOST_USER = "tanomartin3@gmail.com"
+# EMAIL_HOST_PASSWORD = 'jeanmartin'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False

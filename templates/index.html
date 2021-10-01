@@ -158,9 +158,6 @@
       </div>
     </section><!-- End Resume Section -->
     
-
-    
-    
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio section-bg">
       <div class="container">
@@ -186,7 +183,7 @@
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
           
           {% for projet in projets %}
-          <div class="col-lg-4 col-md-6 portfolio-item filter-{{ projet.categorie }}">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-{{ projet.categorie }}">
               <div class="portfolio-wrap">
                 <img src="{{ projet.image.url }}" class="img-fluid" alt="projet image">
                 <div class="portfolio-links">
@@ -195,40 +192,40 @@
                 </div>
               </div>
             </div>
-            {% endfor %}
+          {% endfor %}
             
-          </div>
+        </div>
           
-        </div>
-      </section><!-- End Portfolio Section -->
+      </div>
+    </section><!-- End Portfolio Section -->
 
-      <!-- ======= certificat Section ======= -->
-      <section id="certificat" class="certificat">
-        <div class="container">
-      
-          <div class="section-title">
-            <h2>Certificats</h2>
-            <p>{{ configuration.descriptioncertificat }}</p>
-          </div>
-
-          <div class="row certificat-container" data-aos="fade-up" data-aos-delay="100">
-      
-            {% for certificat in certificats %}
-              <div class="col-lg-4 col-md-6 certificat-item">
-                <div class="certificat-wrap">
-                  <img src="{{ certificat.image.url }}" class="img-fluid" alt="{{ certificat.titre }}">
-                  <!-- <div class="certificat-links">
-                    <button class="certificat-lightbox"></a><i class="">{{ certificat.titre }}</i></button>
-                  </div> -->
-                </div>
-              </div>
-            {% endfor %}
-      
-          </div>
-      
-        </div>
-      </section><!-- End certificat et certificat Section -->
+    <!-- ======= certificat Section ======= -->
+    <section id="certificat" class="certificat">
+      <div class="container">
     
+        <div class="section-title">
+          <h2>Certificats</h2>
+          <p>{{ configuration.descriptioncertificat }}</p>
+        </div>
+
+        <div class="row certificat-container" data-aos="fade-up" data-aos-delay="100">
+    
+          {% for certificat in certificats %}
+            <div class="col-lg-4 col-md-6 certificat-item">
+              <div class="certificat-wrap">
+                <img src="{{ certificat.image.url }}" class="img-fluid" alt="{{ certificat.titre }}">
+                <!-- <div class="certificat-links">
+                  <button class="certificat-lightbox"></a><i class="">{{ certificat.titre }}</i></button>
+                </div> -->
+              </div>
+            </div>
+          {% endfor %}
+    
+        </div>
+    
+      </div>
+    </section><!-- End certificat et certificat Section -->
+  
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
       <div class="container">

@@ -36,6 +36,7 @@ class ProjetAdmin(admin.ModelAdmin):
         "url",
         "dateProjet",
         "client",
+        "technologie",
         "date_add",
         "date_update",
         "status",

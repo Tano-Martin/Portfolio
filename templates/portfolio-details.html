@@ -12,7 +12,7 @@
       <div class="d-flex justify-content-between align-items-center">
         <h2>Portfoio Détails</h2>
         <ol>
-          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'index' %}">Accueil</a></li>
           <li>Portfoio Détails</li>
         </ol>
       </div>
@@ -43,12 +43,13 @@
         
         <div class="col-lg-4">
           <div class="portfolio-info">
-            <h3>Projet information</h3>
+            <h3>Information du projet</h3>
             <ul>
-              <li><strong>Category</strong>: {{ projet.categorie }}</li>
+              <li><strong>Catégorie</strong>: {{ projet.categorie }}</li>
               <li><strong>Client</strong>: {{ projet.client }}</li>
-              <li><strong>Project date</strong>: {{ projet.dateProjet }}</li>
-              <li><strong>Project URL</strong>: <a href="{{ projet.url }}">{{ projet.url }}</a></li>
+              <li><strong>Date du projet</strong>: {{ projet.dateProjet }}</li>
+              <li><strong>Technologie utilisée(s)</strong>: {{ projet.technologie }}</li>            
+              <li><strong>URL du projet</strong>: <a href="{{ projet.url }}">{{ projet.url }}</a></li>
             </ul>
           </div>
           <div class="portfolio-description">
