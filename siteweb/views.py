@@ -8,6 +8,7 @@ from django.http.response import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
 from django.core.mail import send_mail
+from django.conf import settings
 
 # Create your views here.
 def index(request):
@@ -26,12 +27,6 @@ def index(request):
     faits = models_projet.Fait.objects.filter(status=True)
     temoignages = models_projet.Temoignage.objects.filter(status=True)
     services = models_projet.Service.objects.filter(status=True)
-
-    # send_mail("salut test ce mail",
-    # "heratgd jjhsdiusdh",
-    # "tanomartin3@gmail.com",
-    # ["amiroudiallo03@gmail.com"],
-    # fail_silently=False)
     return render(request, "index.html", locals())
 
 
@@ -82,6 +77,7 @@ def contactPost(request):
             )
             contact.save()
             if created:
+                send_mail(sujet, message, settings.EMAIL_HOST_USER, [email], fail_silently=False)
                 test_message = "Votre message a bien été envoyé !"
             else:
                 test_message = "Votre message est déjà envoyé !"
