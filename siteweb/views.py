@@ -77,7 +77,8 @@ def contactPost(request):
             )
             contact.save()
             if created:
-                send_mail(sujet, message, settings.EMAIL_HOST_USER, [email], fail_silently=False)
+                message = f"Nom et Prénoms : {nom}\nEmail : {email}\nSujet : {sujet}\n\n{message}"
+                send_mail(sujet, message, email, [settings.EMAIL_HOST_USER], fail_silently=False)
                 test_message = "Votre message a bien été envoyé !"
             else:
                 test_message = "Votre message est déjà envoyé !"

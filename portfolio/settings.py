@@ -163,4 +163,5 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST_USER = "tanomartin3@gmail.com"
 EMAIL_HOST_PASSWORD = 'jeanmartin'
 EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 EMAIL_PORT = 587
