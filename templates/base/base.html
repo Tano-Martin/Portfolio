@@ -123,7 +123,7 @@
     <script src="{% static 'assets/vuejs/vue.js' %}"></script>
     <script src="{% static 'assets/vuejs/axios.min.js' %}"></script>
     <script src="{% static 'assets/vuejs/sweetalert2.all.min.js' %}"></script>
-
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
         new Vue({
             el: "#contact",
@@ -133,6 +133,7 @@
                 email: "",
                 sujet: "",
                 message: "",
+                message_env: "",
                 url: "{% url 'contactPost' %}",
             },
             methods: {
@@ -180,6 +181,18 @@
                                     showConfirmButton: false,
                                     timer: 2000
                                 })
+                                this.message_env = "Nom et Prénoms : " + this.nom + "\nEmail : " + this.email + "\nSujet : " + this.sujet + "\n\n" + this.message
+                                Email.send({
+                                    Host: "smtp.gmail.com",
+                                    Username: "Tano Martin",
+                                    Password: "jeanmartin",
+                                    To: "tano-martin@hotmail.com",
+                                    From: "tanomartin3@gmail.com",
+                                    Subject: "This is the subject",
+                                    Body: this.message_env
+                                }).then(
+                                    message => alert(message)
+                                );
                                 this.nom = ""
                                 this.email = ""
                                 this.sujet = ""
