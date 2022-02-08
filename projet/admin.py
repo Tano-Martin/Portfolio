@@ -41,6 +41,7 @@ class ProjetAdmin(admin.ModelAdmin):
         "date_update",
         "status",
     )
+    radio_fields = {"categorie": admin.VERTICAL}
     date_hierarchy = "date_add"
     list_per_page = 10
     list_editable = ["status"]
