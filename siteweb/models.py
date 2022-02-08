@@ -16,8 +16,7 @@ class Siteweb(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Siteweb"
-        verbose_name_plural = "Sitewebs"
+        verbose_name_plural = "Site Webs"
 
     def __str__(self):
         return self.nom
@@ -38,7 +37,6 @@ class Configuration(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Configuration"
         verbose_name_plural = "Configurations"
 
     def __str__(self):
@@ -56,8 +54,7 @@ class Apropos(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Apropos"
-        verbose_name_plural = "Aproposs"
+        verbose_name_plural = "A Propos"
 
     def __str__(self):
         return self.titre
@@ -71,8 +68,7 @@ class Optionapropos(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Optionapropos"
-        verbose_name_plural = "Optionaproposs"
+        verbose_name_plural = "Options A Propos"
 
     def __str__(self):
         return self.titre
@@ -88,7 +84,6 @@ class Contact(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Contact"
         verbose_name_plural = "Contacts"
 
     def __str__(self):
@@ -102,7 +97,6 @@ class Travail(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Travail"
         verbose_name_plural = "Travails"
 
     def __str__(self):
@@ -117,8 +111,7 @@ class Resume(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Resume"
-        verbose_name_plural = "Resumes"
+        verbose_name_plural = "Résumes"
 
     def __str__(self):
         return self.titre
@@ -135,8 +128,7 @@ class Optionresume(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Optionresume"
-        verbose_name_plural = "Optionresumes"
+        verbose_name_plural = "Options Résumes"
 
     def __str__(self):
         return self.titre
@@ -150,8 +142,7 @@ class Competence(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Competence"
-        verbose_name_plural = "Competences"
+        verbose_name_plural = "Compétences"
 
     def __str__(self):
         return self.titre
@@ -165,7 +156,6 @@ class Certificat(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Certificat"
         verbose_name_plural = "Certificats"
 
     def __str__(self):
@@ -180,8 +170,7 @@ class Socialicone(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Socialicone"
-        verbose_name_plural = "Socialicones"
+        verbose_name_plural = "Icones Réseaux Sociaux"
 
     def __str__(self):
         return self.nom
@@ -197,8 +186,7 @@ class Reseauxsocial(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Reseauxsocial"
-        verbose_name_plural = "Reseauxsocials"
+        verbose_name_plural = "Réseaux Sociaux"
 
     def __str__(self):
         return self.lien
