@@ -140,7 +140,7 @@
                 <div class="resume-item">
                   <h4>{{ option.titre }}</h4>
                   <h5>{{ option.periode }}</h5>
-                  <p><em>{{ option.nomStructure }}</em></p>
+                  <p><em>{{ option.nomStructure | upper }}</em></p>
                   
                   {% if option.description %}
                     <p>{{ option.description | safe }}</p>
