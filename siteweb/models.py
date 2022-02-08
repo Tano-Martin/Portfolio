@@ -129,6 +129,7 @@ class Optionresume(models.Model):
 
     class Meta:
         verbose_name_plural = "Options Résumes"
+        ordering = ['-date_add']
 
     def __str__(self):
         return self.titre
