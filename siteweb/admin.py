@@ -93,14 +93,14 @@ class OptionresumeAdmin(admin.ModelAdmin):
     list_display = (
         "titre",
         "nomStructure",
-        "date",
+        "periode",
         "date_add",
         "date_update",
         "status",
     )
     date_hierarchy = "date_add"
     list_per_page = 10
-    list_editable = ["status"]
+    list_editable = ["nomStructure", "status", "periode"]
 
 
 @admin.register(models.Competence)
