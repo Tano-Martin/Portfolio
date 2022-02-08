@@ -18,7 +18,7 @@ def index(request):
     travaux = models_siteweb.Travail.objects.filter(status=True)
     sociaux = models_siteweb.Reseauxsocial.objects.filter(status=True)
     certificats = models_siteweb.Certificat.objects.filter(status=True)
-    resumes = models_siteweb.Resume.objects.filter(status=True)
+    resumes = models_siteweb.Resume.objects.filter(status=True).order_by('-date_add')
     competences = models_siteweb.Competence.objects.filter(status=True)
 
     categories = models_projet.Categorie.objects.filter(status=True)
