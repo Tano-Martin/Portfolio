@@ -8,8 +8,7 @@ class Categorie(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Categorie"
-        verbose_name_plural = "Categories"
+        verbose_name_plural = "Catégories"
 
     def __str__(self):
         return self.nom
@@ -25,8 +24,7 @@ class Imageprojet(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Imageprojet"
-        verbose_name_plural = "Imageprojets"
+        verbose_name_plural = "Image De Projets"
 
     def __str__(self):
         return f"{self.image}"
@@ -48,7 +46,6 @@ class Projet(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Projet"
         verbose_name_plural = "Projets"
 
     def __str__(self):
@@ -64,7 +61,6 @@ class Fait(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Fait"
         verbose_name_plural = "Faits"
 
     def __str__(self):
@@ -81,8 +77,7 @@ class Temoignage(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Temoignage"
-        verbose_name_plural = "Temoignages"
+        verbose_name_plural = "Témoignages"
 
     def __str__(self):
         return self.nom
@@ -97,7 +92,6 @@ class Service(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "Service"
         verbose_name_plural = "Services"
 
     def __str__(self):
