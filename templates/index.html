@@ -185,7 +185,7 @@
           {% for projet in projets %}
             <div class="col-lg-4 col-md-6 portfolio-item filter-{{ projet.categorie }}">
               <div class="portfolio-wrap">
-                <img src="{{ projet.image.url }}" class="img-fluid" alt="projet image">
+                <img src="{{ projet.image.url }}" class="img-fluid portfolio-picture" alt="projet image">
                 <div class="portfolio-links">
                   <a href="{{ projet.image.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ projet.titre|capfirst }}"><i class="bx bx-plus"></i></a>
                   <a href="{% url 'portfolioDetail' projet.id %}" title="Plus de details"><i class="bx bx-link"></i></a>
@@ -213,7 +213,7 @@
           {% for certificat in certificats %}
             <div class="col-lg-4 col-md-6 certificat-item">
               <div class="certificat-wrap">
-                <img src="{{ certificat.image.url }}" class="img-fluid" alt="{{ certificat.titre }}">
+                <img src="{{ certificat.image.url }}" class="img-fluid certificat-picture" alt="{{ certificat.titre }}">
                 <!-- <div class="certificat-links">
                   <button class="certificat-lightbox"></a><i class="">{{ certificat.titre }}</i></button>
                 </div> -->
@@ -222,7 +222,10 @@
           {% endfor %}
     
         </div>
-    
+        <figure id="content-img-certificat">
+          <img id="big-picture" src='' alt=''/>
+          
+        </figure>
       </div>
     </section><!-- End certificat et certificat Section -->
   
